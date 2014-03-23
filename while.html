@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+
+		<script type="text/javascript" src="documentation/download/chapter3/data.js"></script>
+		<script type="text/javascript">
+
+			var i = 0;		
+			var employeeCount = data_json.length; // consulto el objeto de de "data.js" en este caso "data_json"
+
+			while(i<employeeCount){
+				if (data_json[i].titles instanceof Array) {
+					
+					var j = 0;
+					var titleCount = data_json[i].titles.length;
+					var titles = "";
+
+					while (j<titleCount){
+						titles += data_json[i].titles[j].title+ " & ";
+						j++;
+					}
+					
+					titles = titles.slice(0, titles.length-3);
+					console.log("Employee "+ data_json[i].emp_no +"has served as "+titles);
+				}
+				else{
+					var title = data_json[i].titles.title;
+					console.log("Employee "+ data_json[i].emp_no +"has served as "+title);
+				}
+				
+				i++;
+				
+			}
+			
+		</script>
+
+
+
+	</head>
+	<body>
+		<p>Garcete contento</p>
+	</body>
+</html>
