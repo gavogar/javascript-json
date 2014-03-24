@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+
+		<script type="text/javascript" src="documentation/download/chapter3/data.js"></script>
+		<script type="text/javascript">
+			
+			for(var i in data_json){
+
+				var data = data_json[i];
+				
+
+				if (data.titles instanceof Array) {
+					
+					var titles = "";
+
+					for (var j in data.titles){
+						
+						titles += data.titles[j].title+ " & ";
+					}
+					
+					titles = titles.slice(0, titles.length-3);
+					console.log("Employee "+ data.emp_no +"has served as "+titles);
+				}
+				else{
+					var title = data.titles.title;
+					console.log("Employee "+ data.emp_no +"has served as "+title);
+				}
+				
+				i++;
+				
+			}
+			
+		</script>
+
+
+
+	</head>
+	<body>
+		<p>Garcete contento</p>
+	</body>
+</html>
